@@ -34,10 +34,12 @@ body.hover{
   animation:1.5s twist1 cubic-bezier(0.85, 0, 0.15, 1) reverse;
   transition:all 1.5s cubic-bezier(0.85, 0, 0.15, 1);
   background:white;
+  animation-delay: 0.3s;
+  transition-delay: 0.3s;
 }
 
 .layer:nth-of-type(1).hover{
-  box-shadow:2px 2px 4px #00000006, 16px 16px 32px #00000012;
+  box-shadow:2px 2px 4px #ffffff12, 16px 16px 32px #ffffff24;
   animation:1.5s twist1 cubic-bezier(0.85, 0, 0.15, 1);
   transform: translateY(300px) rotateX(45deg) rotateZ(45deg) ;
   transition:all 1.5s cubic-bezier(0.85, 0, 0.15, 1);
@@ -57,6 +59,8 @@ body.hover{
   background:#d3d3d3;
   opacity: 0.0;
   backdrop-filter: blur(8px);
+  animation-delay: 0.2s;
+  transition-delay: 0.2s;
 }
 
 .layer:nth-of-type(2).hover{
@@ -79,6 +83,8 @@ body.hover{
   animation:1.5s twist3 cubic-bezier(0.85, 0, 0.15, 1) reverse;
   transition:all 1.5s cubic-bezier(0.85, 0, 0.15, 1);
   border:solid 2px #fac107;
+  animation-delay: 0.1s;
+  transition-delay: 0.1s;
 }
 .layer:nth-of-type(3).hover{
   animation:1.5s twist3 cubic-bezier(0.85, 0, 0.15, 1);
@@ -99,7 +105,7 @@ body.hover{
   animation:1.5s twist4 cubic-bezier(0.85, 0, 0.15, 1) reverse;
   transition:all 1.5s cubic-bezier(0.85, 0, 0.15, 1);
   opacity: 0.0;
-  background:repeating-linear-gradient(-45deg, #fa076c, #fa076c 1px, rgba(52, 52, 0, 0.05) 1px, rgba(52, 52, 0, 0.05) 10px);
+  background:repeating-linear-gradient(-45deg, #fa076c, #fa076c 2px, rgba(52, 52, 0, 0.05) 2px, rgba(52, 52, 0, 0.05) 10px);
   clip-path: polygon( 0% 0%, 0% 100%, 3vmin 100%, 3vmin 3vmin, calc(100% - 3vmin) 3vmin, calc(100% - 3vmin) calc(100% - 3vmin), 3vmin calc(100% - 3vmin), 3vmin 100%, 100% 100%, 100% 0% );
 }
 .layer:nth-of-type(4).hover{

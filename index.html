@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  </head>
+  <body>
+    <div class="layer layer1"></div>
+    <div class="layer layer2"></div>
+    <div class="layer layer3"></div>
+    <div class="layer layer4"></div>
+  </body>
+  <script>
+    let layers = document.getElementsByClassName('layer')
+    Array.prototype.forEach.call(layers, (x) => {
+      x.addEventListener('mouseenter', () => {
+        Array.prototype.map.call(
+          document.getElementsByClassName('layer'),
+          (layer) => (layer.className = layer.className + ' hover')
+        )
+        document.body.className = document.body.className + ' hover'
+      })
+      x.addEventListener('mouseleave', () => {
+        Array.prototype.map.call(
+          document.getElementsByClassName('layer'),
+          (layer) => (layer.className = layer.className.replace(' hover', ''))
+        )
+        document.body.className = document.body.className.replace(' hover', '')
+      })
+    })
+  </script>
+</html>

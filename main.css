@@ -10,10 +10,12 @@ body{
   justify-content:center;
   align-items:center;
   transition:all 1.5s cubic-bezier(0.85, 0, 0.15, 1);
+  transform:scale(1);
 }
 body.hover{
   background:#242424;
   transition:all 1.5s cubic-bezier(0.85, 0, 0.15, 1);
+  transform:scale(0.8);
 }
 .layer{
   width:300px;

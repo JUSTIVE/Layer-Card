@@ -139,12 +139,14 @@ body.hover{
   padding:40px;
   color:#242424;
   font-family: sans-serif;
+  border:dashed 1px transparent;
 }
 .layer:nth-of-type(5).hover{
   animation:1.5s twist5 cubic-bezier(0.85, 0, 0.15, 1);
   transform:translateY(-250px) rotateX(45deg) rotateZ(45deg) ;
   transition:all 1.5s cubic-bezier(0.85, 0, 0.15, 1);
   color:white;
+  border:dashed 1px white;
 }
 .title{
   font-size:18px;

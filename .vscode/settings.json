@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "popupCard"
+    "liveServer.settings.multiRootWorkspaceName": "popupCard",
+    "liveServer.settings.port": 5501
 }

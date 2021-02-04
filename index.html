@@ -5,37 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="decomposable.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="layer.css" />
   </head>
   <body>
-    <div class="layer layer1"></div>
-    <div class="layer layer2">
-      <div class="tint"></div>
+    <div class="decomposable">
+      <div class="layer layer1"></div>
     </div>
-    <div class="layer layer3"></div>
-    <div class="layer layer4"></div>
-    <div class="layer layer5">
-      <div class="title">KIM MIN SANG</div>
-      <div>lorem ipsum dolor sit amet</div>
+    <div class="decomposable">
+      <div class="layer layer2">
+        <div class="tint"></div>
+      </div>
+    </div>
+    <div class="decomposable">
+      <div class="layer layer3"></div>
+    </div>
+    <div class="decomposable">
+      <div class="layer layer4"></div>
+    </div>
+    <div class="decomposable">
+      <div class="layer layer5">
+        <div class="title">KIM MIN SANG</div>
+        <div>lorem ipsum dolor sit amet</div>
+      </div>
     </div>
   </body>
   <script>
     let layers = document.getElementsByClassName('layer')
+    let hoverToggle = (layer) => layer.classList.toggle('hover')
+    let toggle = () => {
+      Array.prototype.map.call(document.getElementsByClassName('layer'), hoverToggle)
+      Array.prototype.map.call(document.getElementsByClassName('decomposable'), hoverToggle)
+      document.body.classList.toggle('hover')
+    }
     Array.prototype.forEach.call(layers, (x) => {
-      x.addEventListener('mouseenter', () => {
-        Array.prototype.map.call(
-          document.getElementsByClassName('layer'),
-          (layer) => (layer.className = layer.className + ' hover')
-        )
-        document.body.className = document.body.className + ' hover'
-      })
-      x.addEventListener('mouseleave', () => {
-        Array.prototype.map.call(
-          document.getElementsByClassName('layer'),
-          (layer) => (layer.className = layer.className.replace(' hover', ''))
-        )
-        document.body.className = document.body.className.replace(' hover', '')
-      })
+      x.addEventListener('mouseenter', toggle)
+      x.addEventListener('mouseleave', toggle)
     })
   </script>
 </html>

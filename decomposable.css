@@ -1,8 +1,38 @@
+.chip{
+  color:#121212;
+  padding:8px 16px;
+  background:white;
+  border-radius: 16px;
+  font-family: sans-serif;
+  font-weight: bold;
+  transition: all 1.5s cubic-bezier(0.85, 0, 0.15, 1);
+  
+  opacity:0;
+}
+.chip.hover{
+  transition: all 1.5s cubic-bezier(0.85, 0, 0.15, 1);
+  transition-delay: 1s;
+  opacity: 1;
+}
+.anchor{
+  margin-left:361px;
+  flex:1;
+  border:solid 1px white;
+  transition: all 1.5s cubic-bezier(0.85, 0, 0.15, 1);
+  
+  opacity:0;
+}
+.anchor.hover{
+  transition-delay: 1s;
+  transition: all 1.5s cubic-bezier(0.85, 0, 0.15, 1);
+  opacity: 0.5;
+}
 .decomposable {
   position: absolute;
   width: 600px;
   height: 300px;
   display: inline-flex;
+  align-items: center;
 }
 .decomposable:hover {
   animation-delay: 1s;

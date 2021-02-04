@@ -11,36 +11,91 @@
   <body>
     <div class="decomposable">
       <div class="layer layer1"></div>
+      <div class="anchor"></div>
+      <div class="chip">Shadow</div>
     </div>
     <div class="decomposable">
       <div class="layer layer2">
         <div class="tint"></div>
       </div>
+      <div class="anchor"></div>
+      <div class="chip">Material</div>
     </div>
     <div class="decomposable">
       <div class="layer layer3"></div>
+      <div class="anchor"></div>
+      <div class="chip">Border</div>
     </div>
     <div class="decomposable">
       <div class="layer layer4"></div>
+      <div class="anchor"></div>
+      <div class="chip">Padding</div>
     </div>
     <div class="decomposable">
       <div class="layer layer5">
         <div class="title">KIM MIN SANG</div>
-        <div>lorem ipsum dolor sit amet</div>
+        <div class="sonnet">
+          My love is as a fever, longing still<br />
+          for that which longer nurseth the disease,<br />
+          Feeding on that which doth preserve the ill,<br />
+          Th’ uncertain sickly appetite to please.<br />
+          My reason, the physician to my love,<br />
+          Angry that his prescriptions are not kept,<br />
+          Hath left me, and I desperate now approve <br />
+          Desire is death, which physic did except.<br />
+          Past cure I am, now reason is past care,<br />
+          And frantic-mad with evermore unrest;<br />
+          My thoughts and my discourse as madmen’s are,<br />
+          At random from the truth vainly expressed: <br />
+          For I have sworn thee fair, and thought thee bright,<br />
+          Who art as black as hell, as dark as night.
+        </div>
       </div>
+      <div class="anchor"></div>
+      <div class="chip">Content Box</div>
     </div>
   </body>
   <script>
     let layers = document.getElementsByClassName('layer')
-    let hoverToggle = (layer) => layer.classList.toggle('hover')
-    let toggle = () => {
-      Array.prototype.map.call(document.getElementsByClassName('layer'), hoverToggle)
-      Array.prototype.map.call(document.getElementsByClassName('decomposable'), hoverToggle)
-      document.body.classList.toggle('hover')
-    }
+    let decomposables = document.getElementsByClassName('decomposable')
+    let chips = document.getElementsByClassName('chip')
+    let anchors = document.getElementsByClassName('anchor')
+
+    let addOnce = (target, classname) =>
+      target.className.includes(classname) ? target.className : target.className + ' ' + classname
+    let addHover = (iterable) =>
+      Array.prototype.map.call(
+        iterable,
+        (element) => (element.className = addOnce(element, 'hover'))
+        //(element.className = element.className.includes('hover') ? element.className : element.className + ' hover')
+      )
+    let removeHover = (iterable) =>
+      Array.prototype.map.call(iterable, (element) => (element.className = element.className.replace(' hover', '')))
+
     Array.prototype.forEach.call(layers, (x) => {
-      x.addEventListener('mouseenter', toggle)
-      x.addEventListener('mouseleave', toggle)
+      x.addEventListener('mouseover', () => {
+        addHover(layers)
+        addHover(decomposables)
+        addHover(chips)
+        addHover(anchors)
+        document.body.className = addOnce(document.body, 'hover')
+        // document.body.className + ' hover'
+      })
+      x.addEventListener('mouseenter', () => {
+        addHover(layers)
+        addHover(decomposables)
+        addHover(chips)
+        addHover(anchors)
+        document.body.className = addOnce(document.body, 'hover')
+        // document.body.className = document.body.className + ' hover'
+      })
+      x.addEventListener('mouseleave', () => {
+        removeHover(layers)
+        removeHover(decomposables)
+        removeHover(chips)
+        removeHover(anchors)
+        document.body.className = document.body.className.replaceAll(' hover', '')
+      })
     })
   </script>
 </html>

@@ -46,7 +46,7 @@ body.hover {
 }
 
 .layer1.hover {
-  box-shadow: 2px 2px 4px #ffffff12, 16px 16px 32px #ffffff24;
+  box-shadow: 4px 4px 8px #ffffff24, 32px 32px 64px #ffffff48;
   animation: 1.5s twist1 cubic-bezier(0.85, 0, 0.15, 1);
   transform: rotateX(45deg) rotateZ(45deg);
   transition: all 1.5s cubic-bezier(0.85, 0, 0.15, 1);
@@ -170,4 +170,8 @@ body.hover {
 .title {
   font-size: 18px;
   font-weight: bold;
+  margin-bottom: 8px;
+}
+.sonnet{
+  font-size: 10px;
 }
